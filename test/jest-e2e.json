@@ -4,11 +4,12 @@
   "testEnvironment": "node",
   "testRegex": ".e2e-spec.ts$",
   "transform": {
-    "^.+\\.(t|j)s$": ["ts-jest", {
-      "useESM": false
-    }]
+    "^.+\\.(t|j)s$": [
+      "ts-jest",
+      {
+        "useESM": false
+      }
+    ]
   },
-  "transformIgnorePatterns": [
-    "node_modules/(?!(@faker-js/faker|fishery)/)"
-  ]
+  "transformIgnorePatterns": ["node_modules/(?!(@faker-js/faker|fishery)/)"]
 }
