@@ -35,6 +35,18 @@
 npm test -- src/order
 ```
 
+## 테스트 종류와 범위 예시
+
+`src/raffle/` 의 API 하나(`GET /raffle/:round/winners`)를 Unit과 API 테스트 두 층위로 검증하며,
+"무엇을 mock하는가"와 "무엇을 확인하는가(로직·조립·**의미⭐**)"가 별개의 축임을 보여줍니다.
+넓게 태우는 것만으로는 값 의미 불일치를 못 잡는다는 걸 변이 실험으로 증명합니다 →
+**[docs/test-types-and-scope.md](docs/test-types-and-scope.md)**
+
+```bash
+npm test -- src/raffle          # Unit
+npm run test:e2e -- raffle      # API 테스트
+```
+
 ## Project setup
 
 ```bash
