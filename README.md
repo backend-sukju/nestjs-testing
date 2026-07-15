@@ -25,6 +25,16 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## 좋은 테스트 vs 나쁜 테스트 예시
+
+`src/order/` 의 할인 도메인 하나에 세 종류의 테스트(change-detector / behavior / side-effect)를 붙여
+"구조를 베낀 테스트"와 "동작을 검증하는 테스트"의 차이를 실행 가능한 형태로 보여줍니다.
+자세한 설명과 두 개의 변이(mutation) 실험 결과는 **[docs/good-vs-bad-tests.md](docs/good-vs-bad-tests.md)** 를 참고하세요.
+
+```bash
+npm test -- src/order
+```
+
 ## Project setup
 
 ```bash
