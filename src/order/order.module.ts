@@ -3,8 +3,11 @@ import { OrderService } from './order.service';
 import { DiscountPolicy } from './discount-policy';
 import { PriceCalculator } from './price-calculator';
 import { AuditLogger } from './audit-logger';
-import { PaymentGateway } from './payment.gateway';
-import { NotificationService } from './notification.service';
+import { PaymentGateway, RealPaymentGateway } from './payment.gateway';
+import {
+  NotificationService,
+  EmailNotificationService,
+} from './notification.service';
 
 @Module({
   providers: [
@@ -12,8 +15,8 @@ import { NotificationService } from './notification.service';
     DiscountPolicy,
     PriceCalculator,
     AuditLogger,
-    PaymentGateway,
-    NotificationService,
+    { provide: PaymentGateway, useClass: RealPaymentGateway },
+    { provide: NotificationService, useClass: EmailNotificationService },
   ],
   exports: [OrderService],
 })
